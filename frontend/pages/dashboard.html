@@ -132,69 +132,69 @@
 
         <form class="planner-form">
 
-            <div class="input-box">
+<div class="input-box">
+    <label>Destination</label>
+    <input type="text" placeholder="Where do you want to go?">
+</div>
 
-                <label>Destination</label>
+<div class="input-box">
+    <label>Start Date</label>
+    <input type="date">
+</div>
 
-                <input type="text" placeholder="Where do you want to go?">
+<div class="input-box">
+    <label>End Date</label>
+    <input type="date">
+</div>
 
-            </div>
+<div class="input-box">
+    <label>Budget</label>
+    <input type="number" placeholder="₹20,000">
+</div>
 
-            <div class="input-box">
+<div class="input-box">
+    <label>Travelers</label>
+    <input type="number" placeholder="2">
+</div>
 
-                <label>Start Date</label>
+<div class="input-box">
+    <label>Travel Interest</label>
 
-                <input type="date">
+    <select id="interest">
 
-            </div>
+        <option>🏕 Adventure</option>
+        <option>❤️ Romantic</option>
+        <option>💎 Luxury</option>
+        <option>🏛 Culture</option>
+        <option>🌿 Nature</option>
 
-            <div class="input-box">
+    </select>
 
-                <label>End Date</label>
+</div>
 
-                <input type="date">
+<div class="input-box trip-type-box">
 
-            </div>
+    <label>Trip Type</label>
 
-            <div class="input-box">
+    <select id="tripType">
 
-                <label>Budget</label>
+        <option>🧍 Solo</option>
+        <option>❤️ Couple</option>
+        <option>👨‍👩‍👧‍👦 Family</option>
+        <option>👫 Friends</option>
+        <option>💼 Business</option>
 
-                <input type="number" placeholder="₹ 20,000">
+    </select>
 
-            </div>
+</div>
 
-            <div class="input-box">
+<button class="generate-btn">
 
-                <label>Travelers</label>
+    <i class="fa-solid fa-wand-magic-sparkles"></i>
 
-                <input type="number" placeholder="2">
+    Generate AI Trip
 
-            </div>
-
-            <div class="input-box">
-
-                <label>Interest</label>
-
-                <select>
-
-                    <option>Adventure</option>
-                    <option>Nature</option>
-                    <option>Beach</option>
-                    <option>Luxury</option>
-                    <option>Family</option>
-
-                </select>
-
-            </div>
-
-            <button class="generate-btn">
-
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-
-                Generate AI Trip
-
-            </button>
+</button>
 
         </form>
 

@@ -113,6 +113,7 @@ button{
 
 }
 
+
 /*==========================
       NAVBAR
 ===========================*/
@@ -529,6 +530,7 @@ button{
     gap:22px;
 
 }
+
 
 /*==========================
       INPUT BOX
@@ -1172,5 +1174,26 @@ button{
 .dashboard-grid .card{
 
     animation:fadeUp .8s ease;
+
+}
+.trip-type-box{
+
+    grid-column:2;
+
+    justify-self:center;
+
+    width:100%;
+
+}
+
+.generate-btn{
+
+    grid-column:2;
+
+    justify-self:center;
+
+    width:320px;
+
+    margin-top:10px;
 
 }

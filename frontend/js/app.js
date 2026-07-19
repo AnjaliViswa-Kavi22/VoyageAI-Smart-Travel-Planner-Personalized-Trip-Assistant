@@ -431,6 +431,14 @@ if(hamburger){
 
 }
 
+const tryDemo = document.getElementById("tryDemo");
+
+if (tryDemo) {
+    tryDemo.addEventListener("click", () => {
+        window.location.href = "pages/create-trip.html?mode=demo";
+    });
+}
+
 /*==========================================
         END
 ==========================================*/

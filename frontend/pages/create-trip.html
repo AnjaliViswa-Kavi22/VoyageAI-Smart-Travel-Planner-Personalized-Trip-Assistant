@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Trip | VoyageAI</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/trip.css">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Background Glow -->
+    <div class="bg-glow glow1"></div>
+    <div class="bg-glow glow2"></div>
+
+    <!-- ========================= -->
+    <!-- Navbar -->
+    <!-- ========================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <i class="ri-flight-takeoff-fill"></i>
+
+            <span>VoyageAI</span>
+
+        </div>
+
+        <nav>
+
+            <a href="../index.html">Home</a>
+
+            <a href="dashboard.html">Dashboard</a>
+
+            <a href="#">My Trips</a>
+
+            <a href="#">Profile</a>
+
+        </nav>
+
+    </header>
+
+    <!-- ========================= -->
+    <!-- Demo Banner -->
+    <!-- ========================= -->
+
+    <div id="demoBanner" class="demo-banner">
+
+        🚀 <strong>Demo Mode</strong>
+
+        Explore VoyageAI without signing in.
+        Your trip cannot be saved.
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- Hero -->
+    <!-- ========================= -->
+
+    <section class="hero">
+
+        <h1>
+
+            Plan Your Dream Journey
+
+        </h1>
+
+        <p>
+
+            Let AI design your perfect vacation
+            based on your destination, budget,
+            travel style and preferences.
+
+        </p>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Main Container -->
+    <!-- ========================= -->
+
+    <section class="trip-container">
+
+        <!-- LEFT SIDE -->
+
+        <div class="trip-form">
+
+            <h2>
+
+                <i class="ri-map-pin-line"></i>
+
+                Trip Information
+
+            </h2>
+
+            <!-- Destination -->
+
+            <div class="input-group">
+
+                <label>
+
+                    Destination
+
+                </label>
+
+                <select id="destination">
+
+                    <option value="">Choose Destination</option>
+
+                    <option value="Bali">Bali</option>
+
+                    <option value="Paris">Paris</option>
+
+                    <option value="Switzerland">Switzerland</option>
+
+                    <option value="Maldives">Maldives</option>
+
+                    <option value="Dubai">Dubai</option>
+
+                    <option value="Japan">Japan</option>
+
+                </select>
+
+            </div>
+
+            <!-- Dates -->
+
+            <div class="two-column">
+
+                <div class="input-group">
+
+                    <label>
+
+                        Start Date
+
+                    </label>
+
+                    <input type="date" id="startDate">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>
+
+                        End Date
+
+                    </label>
+
+                    <input type="date" id="endDate">
+
+                </div>
+
+            </div>
+
+            <!-- Budget -->
+
+            <div class="input-group">
+
+                <label>
+
+                    Budget (₹)
+
+                </label>
+
+                <input
+                    type="number"
+                    id="budget"
+                    placeholder="Example : 50000">
+
+            </div>
+
+            <!-- Travelers -->
+
+            <div class="input-group">
+
+                <label>
+
+                    Travelers
+
+                </label>
+
+                <select id="travelers">
+
+                    <option>1</option>
+
+                    <option>2</option>
+
+                    <option>3</option>
+
+                    <option>4</option>
+
+                    <option>5+</option>
+
+                </select>
+
+            </div>
+                        <!-- Trip Type -->
+
+            <div class="input-group">
+
+                <label>
+
+                    Trip Type
+
+                </label>
+
+                <select id="tripType">
+
+                    <option value="Solo">🧍 Solo</option>
+
+                    <option value="Couple">❤️ Couple</option>
+
+                    <option value="Family">👨‍👩‍👧‍👦 Family</option>
+
+                    <option value="Friends">👫 Friends</option>
+
+                    <option value="Business">💼 Business</option>
+
+                </select>
+
+            </div>
+
+            <!-- Travel Interest -->
+
+            <div class="input-group">
+
+                <label>
+
+                    Travel Interest
+
+                </label>
+
+                <select id="interest">
+
+                    <option value="Adventure">🏕 Adventure</option>
+
+                    <option value="Romantic">❤️ Romantic</option>
+
+                    <option value="Luxury">💎 Luxury</option>
+
+                    <option value="Culture">🏛 Culture</option>
+
+                    <option value="Nature">🌿 Nature</option>
+
+                </select>
+
+            </div>
+
+            <!-- Accommodation -->
+
+            <div class="input-group">
+
+                <label>
+
+                    Accommodation
+
+                </label>
+
+                <select id="hotel">
+
+                    <option>3 Star Hotel</option>
+
+                    <option>4 Star Hotel</option>
+
+                    <option>5 Star Hotel</option>
+
+                    <option>Resort</option>
+
+                    <option>Villa</option>
+
+                </select>
+
+            </div>
+
+            <!-- Transport -->
+
+            <div class="input-group">
+
+                <label>
+
+                    Transportation
+
+                </label>
+
+                <select id="transport">
+
+                    <option>Flight</option>
+
+                    <option>Train</option>
+
+                    <option>Bus</option>
+
+                    <option>Car Rental</option>
+
+                </select>
+
+            </div>
+
+            <!-- Button -->
+
+            <button class="generate-btn">
+
+                <i class="ri-magic-line"></i>
+
+                Generate My Trip
+
+            </button>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="preview-card">
+
+            <h2>
+
+                ✨ AI Preview
+
+            </h2>
+
+            <div class="preview-image">
+
+                <img
+                    id="previewImage"
+                    src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1"
+                    alt="Destination">
+
+            </div>
+
+            <div class="preview-content">
+
+                <h3 id="previewTitle">
+
+                    Bali Adventure
+
+                </h3>
+
+                <p>
+
+                    📅
+
+                    <span id="previewDays">
+
+                        5 Days
+
+                    </span>
+
+                </p>
+
+                <p>
+
+                    💰
+
+                    <span id="previewBudget">
+
+                        ₹50,000
+
+                    </span>
+
+                </p>
+
+                <p>
+
+                    👥
+
+                    <span id="previewTravelers">
+
+                        2 Travelers
+
+                    </span>
+
+                </p>
+
+                <p>
+
+                    🚶
+
+                    <span id="previewTripType">
+
+                        Solo
+
+                    </span>
+
+                </p>
+
+                <p>
+
+                    🎯
+
+                    <span id="previewInterest">
+
+                        Adventure
+
+                    </span>
+
+                </p>
+
+                <div class="features">
+
+                    <div>
+
+                        ✈ Flights
+
+                    </div>
+
+                    <div>
+
+                        🏨 Hotels
+
+                    </div>
+
+                    <div>
+
+                        🍽 Restaurants
+
+                    </div>
+
+                    <div>
+
+                        🌦 Weather
+
+                    </div>
+
+                    <div>
+
+                        📍 Attractions
+
+                    </div>
+
+                    <div>
+
+                        🤖 AI Itinerary
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- JS -->
+
+    <script src="../js/trip.js"></script>
+
+</body>
+
+</html>

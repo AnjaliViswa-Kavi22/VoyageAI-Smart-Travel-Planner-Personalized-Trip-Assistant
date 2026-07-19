@@ -367,7 +367,7 @@ button{
 
 }
 
-.signup-btn{
+.login1-btn{
 
     padding:12px 26px;
 
@@ -393,7 +393,7 @@ button{
 
 }
 
-.signup-btn:hover{
+.login1-btn:hover{
 
     transform:translateY(-3px);
 
@@ -1413,7 +1413,7 @@ footer p{
 
 .primary-btn,
 
-.signup-btn,
+.login1-btn,
 
 .hero-card button,
 
@@ -1427,7 +1427,7 @@ footer p{
 
 .primary-btn::before,
 
-.signup-btn::before,
+.login1-btn::before,
 
 .hero-card button::before,
 
@@ -1455,7 +1455,7 @@ footer p{
 
 .primary-btn:hover::before,
 
-.signup-btn:hover::before,
+.login1-btn:hover::before,
 
 .hero-card button:hover::before,
 
