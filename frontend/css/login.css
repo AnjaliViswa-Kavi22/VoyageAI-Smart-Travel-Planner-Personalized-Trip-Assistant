@@ -16,13 +16,28 @@ body{
     align-items:center;
     overflow:hidden;
 
-    background:linear-gradient(
-        135deg,
-        #020B1C 0%,
-        #0F172A 30%,
-        #1E3A8A 70%,
-        #3B82F6 100%
-    );
+    background:
+
+        radial-gradient(
+            circle at top left,
+            rgba(59,130,246,.25) 0%,
+            rgba(59,130,246,.08) 25%,
+            transparent 45%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            rgba(124,58,237,.22) 0%,
+            transparent 45%
+        ),
+
+        linear-gradient(
+            135deg,
+            #081120 0%,
+            #0B1324 35%,
+            #101827 65%,
+            #0F172A 100%
+        );
 }
 
 /* ===========================
@@ -30,28 +45,52 @@ body{
 =========================== */
 
 body::before{
+
     content:"";
+
     position:fixed;
-    width:450px;
-    height:450px;
+
+    width:650px;
+    height:650px;
+
+    top:-250px;
+    left:-250px;
+
     border-radius:50%;
-    background:rgba(59,130,246,.18);
-    top:-120px;
-    left:-120px;
-    filter:blur(120px);
+
+    background:radial-gradient(
+        circle,
+        rgba(59,130,246,.22),
+        transparent 70%
+    );
+
+    filter:blur(70px);
+
     z-index:-2;
 }
 
 body::after{
+
     content:"";
+
     position:fixed;
-    width:500px;
-    height:500px;
+
+    width:700px;
+    height:700px;
+
+    bottom:-300px;
+    right:-250px;
+
     border-radius:50%;
-    background:rgba(99,102,241,.18);
-    bottom:-150px;
-    right:-150px;
-    filter:blur(140px);
+
+    background:radial-gradient(
+        circle,
+        rgba(124,58,237,.18),
+        transparent 70%
+    );
+
+    filter:blur(80px);
+
     z-index:-2;
 }
 
@@ -68,13 +107,13 @@ body::after{
 
     border-radius:30px;
 
-    background:rgba(255,255,255,.08);
+    background:rgba(17,24,39,.78);
 
-    backdrop-filter:blur(18px);
+    backdrop-filter:blur(28px);
 
-    border:1px solid rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.08);
 
-    box-shadow:0 25px 60px rgba(0,0,0,.35);
+    box-shadow:0 30px 80px rgba(0,0,0,.55);
 
     overflow:hidden;
 }
