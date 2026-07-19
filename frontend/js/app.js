@@ -1,362 +1,436 @@
-/* ==========================================
-   VOYAGEAI HOMEPAGE JAVASCRIPT
-========================================== */
+/*==========================================
+        VOYAGEAI LANDING PAGE
+==========================================*/
 
-/* ==========================================
-   TYPEWRITER EFFECT
-========================================== */
+document.addEventListener("DOMContentLoaded", () => {
 
-const texts = [
-    "Plan Your Dream Journey with AI.",
-    "Discover Beautiful Destinations.",
-    "Travel Smarter with VoyageAI.",
-    "Create Personalized Trips.",
-    "Explore India Like Never Before."
-];
+    navbarEffect();
 
-let textIndex = 0;
-let charIndex = 0;
+    smoothScrolling();
 
-const typewriter = document.getElementById("typewriter");
+    counterAnimation();
 
-function typeEffect() {
+    scrollReveal();
 
-    if (charIndex < texts[textIndex].length) {
+    heroButton();
 
-        typewriter.textContent += texts[textIndex].charAt(charIndex);
+    aiPreviewButton();
 
-        charIndex++;
+    destinationHover();
 
-        setTimeout(typeEffect,80);
+});
 
-    } else {
 
-        setTimeout(eraseEffect,1800);
+/*==========================================
+        STICKY NAVBAR
+==========================================*/
 
-    }
+function navbarEffect() {
 
-}
+    const navbar = document.querySelector(".navbar");
 
-function eraseEffect(){
+    window.addEventListener("scroll", () => {
 
-    if(charIndex>0){
+        if (window.scrollY > 50) {
 
-        typewriter.textContent=texts[textIndex].substring(0,charIndex-1);
+            navbar.style.background = "rgba(17,24,39,.92)";
+            navbar.style.backdropFilter = "blur(22px)";
+            navbar.style.boxShadow = "0 15px 35px rgba(0,0,0,.30)";
 
-        charIndex--;
+        } else {
 
-        setTimeout(eraseEffect,40);
-
-    }
-
-    else{
-
-        textIndex++;
-
-        if(textIndex>=texts.length){
-
-            textIndex=0;
+            navbar.style.background = "rgba(17,24,39,.72)";
+            navbar.style.boxShadow = "none";
 
         }
 
-        setTimeout(typeEffect,300);
-
-    }
+    });
 
 }
 
-typeEffect();
 
+/*==========================================
+        SMOOTH SCROLL
+==========================================*/
 
-/* ==========================================
-   IMAGE CAROUSEL
-========================================== */
+function smoothScrolling() {
 
-const carouselImages=[
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-"images/goa.jpg",
+        link.addEventListener("click", function (e) {
 
-"images/manali.jpg",
+            e.preventDefault();
 
-"images/kerala.jpg",
+            const target = document.querySelector(this.getAttribute("href"));
 
-"images/ooty.jpg",
+            if (target) {
 
-"images/kashmir.jpg",
+                target.scrollIntoView({
 
-"images/jaipur.jpg"
+                    behavior: "smooth"
 
-];
+                });
 
-const carousel=document.getElementById("carouselImage");
+            }
 
-let imageIndex=0;
+        });
 
-function changeImage(){
-
-imageIndex++;
-
-if(imageIndex>=carouselImages.length){
-
-imageIndex=0;
+    });
 
 }
 
-carousel.style.opacity="0";
 
-setTimeout(()=>{
+/*==========================================
+        HERO COUNTERS
+==========================================*/
 
-carousel.src=carouselImages[imageIndex];
+function counterAnimation() {
 
-carousel.style.opacity="1";
+    const counters = document.querySelectorAll(".hero-stats h2");
 
-},500);
+    let started = false;
 
-}
+    window.addEventListener("scroll", () => {
 
-setInterval(changeImage,3000);
+        const hero = document.querySelector(".hero-stats");
 
+        if (!hero) return;
 
-/* ==========================================
-   SEARCH SUGGESTIONS
-========================================== */
+        const position = hero.getBoundingClientRect().top;
 
-const places=[
+        if (position < window.innerHeight - 100 && !started) {
 
-"Goa",
-"Manali",
-"Jaipur",
-"Ooty",
-"Kerala",
-"Kashmir",
-"Delhi",
-"Hyderabad",
-"Mumbai",
-"Chennai",
-"Pondicherry",
-"Coorg",
-"Munnar",
-"Ladakh",
-"Shimla",
-"Darjeeling",
-"Agra",
-"Varanasi",
-"Tirupati",
-"Amritsar"
+            started = true;
 
-];
+            counters.forEach(counter => {
 
-const input=document.getElementById("searchInput");
+                animateCounter(counter);
 
-const suggestionBox=document.getElementById("suggestions");
+            });
 
-input.addEventListener("keyup",function(){
+        }
 
-let value=input.value.toLowerCase();
-
-suggestionBox.innerHTML="";
-
-if(value===""){
-
-return;
+    });
 
 }
 
-let filtered=places.filter(place=>
 
-place.toLowerCase().startsWith(value)
+function animateCounter(counter) {
 
-);
+    const text = counter.innerText;
 
-filtered.forEach(place=>{
+    const value = parseInt(text.replace(/\D/g, ""));
 
-const li=document.createElement("li");
+    let current = 0;
 
-li.innerHTML=place;
+    const increment = Math.ceil(value / 60);
 
-li.onclick=()=>{
+    const timer = setInterval(() => {
 
-input.value=place;
+        current += increment;
 
-suggestionBox.innerHTML="";
+        if (current >= value) {
 
-};
+            current = value;
 
-suggestionBox.appendChild(li);
+            clearInterval(timer);
+
+        }
+
+        if (text.includes("%")) {
+
+            counter.innerText = current + "%";
+
+        }
+
+        else if (text.includes("K")) {
+
+            counter.innerText = current + "K+";
+
+        }
+
+        else {
+
+            counter.innerText = current + "+";
+
+        }
+
+    }, 20);
+
+}
+
+
+/*==========================================
+        SCROLL REVEAL
+==========================================*/
+
+function scrollReveal() {
+
+    const sections = document.querySelectorAll(
+
+        ".feature-card,.destination-card,.about-box,.cta,.hero-card"
+
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.opacity = "1";
+
+                entry.target.style.transform = "translateY(0)";
+
+            }
+
+        });
+
+    }, {
+
+        threshold: .2
+
+    });
+
+    sections.forEach(section => {
+
+        section.style.opacity = "0";
+
+        section.style.transform = "translateY(60px)";
+
+        section.style.transition = ".8s ease";
+
+        observer.observe(section);
+
+    });
+
+}
+
+
+/*==========================================
+        START PLANNING BUTTON
+==========================================*/
+
+function heroButton() {
+
+    const button = document.querySelector(".primary-btn");
+
+    if (!button) return;
+
+    button.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        button.innerHTML =
+
+            '<i class="fa-solid fa-spinner fa-spin"></i> Loading...';
+
+        setTimeout(() => {
+
+            window.location.href = "pages/register.html";
+
+        }, 1200);
+
+    });
+
+}
+
+
+/*==========================================
+        AI PREVIEW BUTTON
+==========================================*/
+
+function aiPreviewButton() {
+
+    const btn = document.querySelector(".hero-card button");
+
+    if (!btn) return;
+
+    btn.addEventListener("click", () => {
+
+        btn.innerHTML =
+
+            '<i class="fa-solid fa-spinner fa-spin"></i> Generating...';
+
+        btn.disabled = true;
+
+        setTimeout(() => {
+
+            alert("AI Trip Planner will be connected with Flask + Groq AI.");
+
+            btn.innerHTML = "Generate My Trip";
+
+            btn.disabled = false;
+
+        }, 1800);
+
+    });
+
+}
+
+
+/*==========================================
+        DESTINATION HOVER
+==========================================*/
+
+function destinationHover() {
+
+    const cards = document.querySelectorAll(".destination-card");
+
+    cards.forEach(card => {
+
+        card.addEventListener("mousemove", (e) => {
+
+            const rect = card.getBoundingClientRect();
+
+            const x = e.clientX - rect.left;
+
+            const y = e.clientY - rect.top;
+
+            card.style.transform =
+
+                `perspective(1000px)
+                rotateX(${(y - rect.height / 2) / 30}deg)
+                rotateY(${-(x - rect.width / 2) / 30}deg)
+                scale(1.03)`;
+
+        });
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.transform =
+
+                "perspective(1000px) rotateX(0) rotateY(0) scale(1)";
+
+        });
+
+    });
+
+}
+
+
+/*==========================================
+        FEATURE CARD EFFECT
+==========================================*/
+
+const features = document.querySelectorAll(".feature-card");
+
+features.forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+
+        card.style.transform = "translateY(-10px) scale(1.03)";
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform = "translateY(0) scale(1)";
+
+    });
 
 });
 
-});
 
+/*==========================================
+        ABOUT CARD EFFECT
+==========================================*/
 
-/* ==========================================
-   COUNTER ANIMATION
-========================================== */
+const aboutCards = document.querySelectorAll(".about-box");
 
-const counters=document.querySelectorAll(".counter");
+aboutCards.forEach(card => {
 
-const speed=100;
+    card.addEventListener("mouseenter", () => {
 
-counters.forEach(counter=>{
+        card.style.transform = "translateY(-8px)";
 
-function update(){
+    });
 
-const target=+counter.getAttribute("data-target");
+    card.addEventListener("mouseleave", () => {
 
-const count=+counter.innerText;
+        card.style.transform = "translateY(0px)";
 
-const increment=target/speed;
-
-if(count<target){
-
-counter.innerText=Math.ceil(count+increment);
-
-setTimeout(update,25);
-
-}
-
-else{
-
-counter.innerText=target;
-
-}
-
-}
-
-update();
+    });
 
 });
 
 
-/* ==========================================
-   SMOOTH NAVIGATION
-========================================== */
+/*==========================================
+        CTA BUTTON
+==========================================*/
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+const ctaButton = document.querySelector(".cta a");
 
-anchor.addEventListener("click",function(e){
+if (ctaButton) {
 
-e.preventDefault();
+    ctaButton.addEventListener("click", (e) => {
 
-document.querySelector(this.getAttribute("href"))
+        e.preventDefault();
 
-.scrollIntoView({
+        window.location.href = "pages/register.html";
 
-behavior:"smooth"
-
-});
-
-});
-
-});
-
-
-/* ==========================================
-   SCROLL REVEAL
-========================================== */
-
-const reveals=document.querySelectorAll(
-
-".card,.destination-card,.step,.testimonial"
-
-);
-
-window.addEventListener("scroll",reveal);
-
-function reveal(){
-
-const windowHeight=window.innerHeight;
-
-reveals.forEach(item=>{
-
-const top=item.getBoundingClientRect().top;
-
-if(top<windowHeight-100){
-
-item.classList.add("active");
-
-}
-
-});
+    });
 
 }
 
 
-/* ==========================================
-   NAVBAR BACKGROUND
-========================================== */
+/*==========================================
+        NAVBAR ACTIVE LINK
+==========================================*/
 
-window.addEventListener("scroll",()=>{
+const navLinks = document.querySelectorAll(".nav-links a");
 
-const header=document.querySelector("header");
+window.addEventListener("scroll", () => {
 
-if(window.scrollY>80){
+    let current = "";
 
-header.style.background="rgba(8,15,30,.95)";
+    document.querySelectorAll("section").forEach(section => {
+
+        const top = window.scrollY;
+
+        const offset = section.offsetTop - 150;
+
+        const height = section.offsetHeight;
+
+        if (top >= offset && top < offset + height) {
+
+            current = section.getAttribute("id");
+
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+/*==========================================
+        HAMBURGER MENU
+==========================================*/
+
+const hamburger = document.querySelector(".hamburger");
+
+const navLinks = document.querySelector(".nav-links");
+
+if(hamburger){
+
+    hamburger.addEventListener("click",()=>{
+
+        navLinks.classList.toggle("active");
+
+    });
 
 }
 
-else{
-
-header.style.background="rgba(8,15,30,.75)";
-
-}
-
-});
-
-
-/* ==========================================
-   BUTTON RIPPLE EFFECT
-========================================== */
-
-const buttons=document.querySelectorAll(".btn-primary,.btn-secondary");
-
-buttons.forEach(btn=>{
-
-btn.addEventListener("click",function(e){
-
-let circle=document.createElement("span");
-
-circle.classList.add("ripple");
-
-this.appendChild(circle);
-
-let x=e.clientX-this.offsetLeft;
-
-let y=e.clientY-this.offsetTop;
-
-circle.style.left=x+"px";
-
-circle.style.top=y+"px";
-
-setTimeout(()=>{
-
-circle.remove();
-
-},600);
-
-});
-
-});
-
-
-/* ==========================================
-   CURRENT YEAR
-========================================== */
-
-const footer=document.querySelector("footer p:last-child");
-
-const year=new Date().getFullYear();
-
-footer.innerHTML="© "+year+" VoyageAI. All Rights Reserved.";
-
-
-/* ==========================================
-   PAGE LOADED
-========================================== */
-
-window.onload=()=>{
-
-document.body.style.opacity="1";
-
-};
+/*==========================================
+        END
+==========================================*/

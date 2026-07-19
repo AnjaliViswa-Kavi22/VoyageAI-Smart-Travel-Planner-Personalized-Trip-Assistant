@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | VoyageAI</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-earth-asia"></i>
+
+            <span>VoyageAI</span>
+
+        </div>
+
+        <ul class="nav-links">
+
+            <li class="active">
+                <a href="#">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="my-trips.html">
+                    My Trips
+                </a>
+            </li>
+
+            <li>
+                <a href="create-trip.html">
+                    Plan Trip
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    Profile
+                </a>
+            </li>
+
+        </ul>
+
+        <div class="nav-right">
+
+            <button class="nav-btn">
+                <i class="fa-solid fa-bell"></i>
+            </button>
+
+            <button class="nav-btn">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <div class="profile">
+
+                <img src="../images/profile.jpg" alt="Profile">
+
+                <div>
+
+                    <h4>Manoj</h4>
+
+                    <small>Traveler</small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="badge">
+
+                ✈ AI Powered Travel Planner
+
+            </span>
+
+            <h1>
+
+                Good Morning, Manoj 👋
+
+            </h1>
+
+            <p>
+
+                Plan smarter. Travel better.
+
+                Create personalized trips using AI in seconds.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ===================== AI PLANNER ===================== -->
+
+    <section class="planner-card">
+
+        <h2>
+
+            Plan Your Next Journey
+
+        </h2>
+
+        <form class="planner-form">
+
+            <div class="input-box">
+
+                <label>Destination</label>
+
+                <input type="text" placeholder="Where do you want to go?">
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Start Date</label>
+
+                <input type="date">
+
+            </div>
+
+            <div class="input-box">
+
+                <label>End Date</label>
+
+                <input type="date">
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Budget</label>
+
+                <input type="number" placeholder="₹ 20,000">
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Travelers</label>
+
+                <input type="number" placeholder="2">
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Interest</label>
+
+                <select>
+
+                    <option>Adventure</option>
+                    <option>Nature</option>
+                    <option>Beach</option>
+                    <option>Luxury</option>
+                    <option>Family</option>
+
+                </select>
+
+            </div>
+
+            <button class="generate-btn">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Generate AI Trip
+
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- ===================== STATS ===================== -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-route"></i>
+
+            <h2>05</h2>
+
+            <p>Total Trips</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-wallet"></i>
+
+            <h2>₹45K</h2>
+
+            <p>Total Budget</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <h2>02</h2>
+
+            <p>Upcoming</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-earth-americas"></i>
+
+            <h2>03</h2>
+
+            <p>Countries</p>
+
+        </div>
+
+    </section>
+
+    <!-- ===================== CONTENT ===================== -->
+
+    <section class="dashboard-grid">
+
+        <!-- Recent Trips -->
+
+        <div class="recent-trips card">
+
+            <div class="card-title">
+
+                <h2>Recent Trips</h2>
+
+                <a href="my-trips.html">
+
+                    View All →
+
+                </a>
+
+            </div>
+
+            <div class="trip-card">
+
+                <div>
+
+                    <h3>🏖 Goa</h3>
+
+                    <span>20 Jul - 25 Jul</span>
+
+                </div>
+
+                <button>View</button>
+
+            </div>
+
+            <div class="trip-card">
+
+                <div>
+
+                    <h3>🏔 Ooty</h3>
+
+                    <span>10 Aug - 15 Aug</span>
+
+                </div>
+
+                <button>View</button>
+
+            </div>
+
+            <div class="trip-card">
+
+                <div>
+
+                    <h3>🏙 Hyderabad</h3>
+
+                    <span>5 Sep - 8 Sep</span>
+
+                </div>
+
+                <button>View</button>
+
+            </div>
+
+        </div>
+
+        <!-- Weather -->
+
+        <div class="weather card">
+
+            <h2>Today's Weather</h2>
+
+            <i class="fa-solid fa-cloud-sun"></i>
+
+            <h1>28°</h1>
+
+            <p>Hyderabad</p>
+
+            <span>Sunny</span>
+
+        </div>
+
+        <!-- AI Tips -->
+
+        <div class="ai-tips card">
+
+            <h2>
+
+                AI Travel Tip
+
+            </h2>
+
+            <p>
+
+                💡 Book your hotel at least 30 days before your trip to save up to 25%.
+
+            </p>
+
+            <button>
+
+                Ask VoyageAI
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+
+    <footer>
+
+        © 2026 VoyageAI • Smart Travel Planner & Personalized Trip Assistant
+
+    </footer>
+
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

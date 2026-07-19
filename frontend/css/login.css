@@ -1,0 +1,526 @@
+/* ===========================
+   Global Styles
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+    background:linear-gradient(
+        135deg,
+        #020B1C 0%,
+        #0F172A 30%,
+        #1E3A8A 70%,
+        #3B82F6 100%
+    );
+}
+
+/* ===========================
+   Background Glow
+=========================== */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    background:rgba(59,130,246,.18);
+    top:-120px;
+    left:-120px;
+    filter:blur(120px);
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:rgba(99,102,241,.18);
+    bottom:-150px;
+    right:-150px;
+    filter:blur(140px);
+    z-index:-2;
+}
+
+/* ===========================
+   Main Card
+=========================== */
+
+.cont{
+
+    width:950px;
+    height:600px;
+
+    position:relative;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+    overflow:hidden;
+}
+
+/* ===========================
+   Mobile Buttons
+=========================== */
+
+.mobile-btn{
+
+    display:none;
+}
+
+/* ===========================
+   Forms
+=========================== */
+
+.forms{
+
+    display:flex;
+
+    gap:18%;
+
+    height:100%;
+
+    position:relative;
+}
+
+.login,
+.register{
+
+    width:280px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:22px;
+
+    margin-left:60px;
+}
+
+.login h1,
+.register h1{
+
+    color:white;
+
+    margin-bottom:20px;
+
+    font-size:34px;
+}
+
+/* ===========================
+   Inputs
+=========================== */
+
+input{
+
+    width:260px;
+
+    padding:12px;
+
+    border:none;
+
+    border-bottom:2px solid rgba(255,255,255,.5);
+
+    background:transparent;
+
+    color:white;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+input::placeholder{
+
+    color:rgba(255,255,255,.7);
+}
+
+input:focus{
+
+    border-bottom:2px solid #60A5FA;
+}
+
+/* ===========================
+   Submit Buttons
+=========================== */
+
+#loginBtn,
+#registerBtn{
+
+    width:170px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(90deg,#2563EB,#3B82F6);
+
+    transition:.3s;
+}
+
+#loginBtn:hover,
+#registerBtn:hover{
+
+    cursor:pointer;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(59,130,246,.45);
+}
+
+#loginBtn:active,
+#registerBtn:active{
+
+    transform:scale(.95);
+}
+
+/* ===========================
+   Sliding Panel
+=========================== */
+
+#shade{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:100px;
+
+    background:linear-gradient(
+        180deg,
+        #2563EB,
+        #1E3A8A
+    );
+
+    display:flex;
+
+    gap:25%;
+
+    padding-left:10%;
+
+    padding-top:18%;
+
+    text-align:center;
+
+    left:-58%;
+
+    color:white;
+}
+
+.big{
+
+    font-size:42px;
+
+    font-weight:700;
+}
+
+.small{
+
+    margin-top:10px;
+
+    font-size:17px;
+
+    line-height:1.5;
+}
+
+/* ===========================
+   Switch Buttons
+=========================== */
+
+.log,
+.sign{
+
+    margin-top:25px;
+
+    width:150px;
+
+    height:45px;
+
+    border-radius:25px;
+
+    background:white;
+
+    color:#1E3A8A;
+
+    border:none;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.log:hover,
+.sign:hover{
+
+    cursor:pointer;
+
+    background:#E0E7FF;
+}
+
+.log:active,
+.sign:active{
+
+    transform:scale(.95);
+}
+
+/* ===========================
+   Sliding Text
+=========================== */
+
+#login_text{
+
+    display:none;
+}
+
+#sign_text{
+
+    margin-left:59.5%;
+}
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media screen and (max-width:992px){
+
+    .cont{
+        width:90%;
+        height:550px;
+    }
+
+    .forms{
+        gap:10%;
+    }
+
+    .login,
+    .register{
+        margin-left:40px;
+    }
+
+    input{
+        width:220px;
+    }
+
+    #loginBtn,
+    #registerBtn{
+        width:150px;
+    }
+
+    .big{
+        font-size:34px;
+    }
+
+    .small{
+        font-size:15px;
+    }
+
+}
+
+@media screen and (max-width:768px){
+
+    body{
+
+        padding:20px;
+        overflow:auto;
+    }
+
+    .cont{
+
+        width:100%;
+        max-width:420px;
+        height:auto;
+        min-height:620px;
+
+        border-radius:20px;
+    }
+
+    .forms{
+
+        display:block;
+        height:auto;
+    }
+
+    /* Hide desktop sliding panel */
+
+    #shade{
+
+        display:none;
+    }
+
+    /* Mobile Navigation Buttons */
+
+    .mobile-btn{
+
+        display:block;
+
+        position:absolute;
+
+        top:18px;
+
+        background:none;
+
+        border:none;
+
+        color:#ffffff;
+
+        font-size:15px;
+
+        font-weight:600;
+
+        cursor:pointer;
+
+        z-index:100;
+    }
+
+    .mobile-login-btn{
+
+        left:20px;
+
+        display:none;
+    }
+
+    .mobile-register-btn{
+
+        right:20px;
+    }
+
+    /* Forms */
+
+    .login,
+    .register{
+
+        position:relative;
+
+        width:100%;
+
+        margin:0;
+
+        padding:80px 30px 40px;
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        align-items:center;
+
+        gap:20px;
+    }
+
+    /* Show Login First */
+
+    .register{
+
+        display:none;
+    }
+
+    .login{
+
+        display:flex;
+    }
+
+    .login h1,
+    .register h1{
+
+        font-size:30px;
+        margin-bottom:15px;
+    }
+
+    input{
+
+        width:100%;
+        max-width:320px;
+    }
+
+    #loginBtn,
+    #registerBtn{
+
+        width:100%;
+        max-width:320px;
+    }
+
+}
+
+@media screen and (max-width:480px){
+
+    body{
+
+        padding:15px;
+    }
+
+    .cont{
+
+        min-height:580px;
+
+        border-radius:18px;
+    }
+
+    .login,
+    .register{
+
+        padding:70px 20px 30px;
+    }
+
+    .login h1,
+    .register h1{
+
+        font-size:26px;
+    }
+
+    input{
+
+        font-size:14px;
+        padding:11px;
+    }
+
+    #loginBtn,
+    #registerBtn{
+
+        font-size:15px;
+        padding:11px;
+    }
+
+    .mobile-btn{
+
+        font-size:14px;
+    }
+
+}

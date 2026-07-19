@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoyageAI | Login / Sign Up</title>
+
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+
+    <div class="cont">
+
+        <!-- Mobile Navigation -->
+        <button class="mobile-btn mobile-login-btn">← Login</button>
+        <button class="mobile-btn mobile-register-btn">Sign Up →</button>
+
+        <div class="forms">
+
+            <!-- Register Form -->
+            <form action="#" class="register">
+
+                <h1>Create Account</h1>
+
+                <input type="text" placeholder="Full Name" required>
+
+                <input type="email" placeholder="Email Address" required>
+
+                <input type="password" placeholder="Password" required>
+
+                <input type="password" placeholder="Confirm Password" required>
+
+                <input type="submit" value="Create Account" id="registerBtn">
+
+            </form>
+
+            <!-- Login Form -->
+            <form action="#" class="login">
+
+                <h1>Welcome Back</h1>
+
+                <input type="email" placeholder="Email Address" required>
+
+                <input type="password" placeholder="Password" required>
+
+                <input type="submit" value="Login" id="loginBtn">
+
+            </form>
+
+            <!-- Desktop Sliding Panel -->
+            <div id="shade">
+
+                <div id="login_text">
+
+                    <p class="big">Welcome Back!</p>
+
+                    <p class="small">
+                        Sign in to continue your journey.
+                    </p>
+
+                    <button type="button" class="log">
+                        Login
+                    </button>
+
+                </div>
+
+                <div id="sign_text">
+
+                    <p class="big">Explore the World!</p>
+
+                    <p class="small">
+                        Create your VoyageAI account.
+                    </p>
+
+                    <button type="button" class="sign">
+                        Sign Up
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="../js/auth.js"></script>
+
+</body>
+
+</html>
