@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VoyageAI | Smart Travel Planner</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- Navbar -->
+    <!-- ========================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                ✈️ VoyageAI
+            </div>
+
+            <ul class="nav-links">
+
+                <li><a href="#">Home</a></li>
+
+                <li><a href="#features">Features</a></li>
+
+                <li><a href="#destinations">Destinations</a></li>
+
+                <li><a href="#about">About</a></li>
+
+                <li>
+                    <a href="pages/login.html" class="login-btn">
+                        Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="pages/register.html" class="register-btn">
+                        Register
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- ========================= -->
+    <!-- Hero -->
+    <!-- ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-left">
+
+            <h1>
+
+                <span id="typewriter"></span>
+
+            </h1>
+
+            <p>
+
+                Discover beautiful destinations, create personalized
+                itineraries, manage your travel budget,
+                explore weather updates,
+                and let AI build your perfect journey.
+
+            </p>
+
+            <!-- Search -->
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search Destination...">
+
+                <button>
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+            </div>
+
+            <!-- Suggestions -->
+
+            <ul id="suggestions"></ul>
+
+            <!-- Buttons -->
+
+            <div class="hero-buttons">
+
+                <a href="pages/register.html" class="btn-primary">
+
+                    Get Started
+
+                </a>
+
+                <a href="#destinations" class="btn-secondary">
+
+                    Explore Destinations
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Right -->
+
+        <div class="hero-right">
+
+            <div class="carousel">
+
+                <img
+                    id="carouselImage"
+                    src="images/goa.jpeg"
+                    alt="Destination">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Features -->
+    <!-- ========================= -->
+
+    <section
+        class="features"
+        id="features">
+
+        <h2>
+
+            Why Choose VoyageAI?
+
+        </h2>
+
+        <div class="feature-grid">
+
+            <div class="card">
+
+                <i class="fa-solid fa-robot"></i>
+
+                <h5>
+
+                    AI Trip Planner
+
+                </h5>
+
+                <p>
+
+                    Generate complete travel plans using Artificial Intelligence.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-cloud-sun"></i>
+
+                <h3>
+
+                    Live Weather
+
+                </h3>
+
+                <p>
+
+                    Check weather before planning your journey.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-map-location-dot"></i>
+
+                <h3>
+
+                    Smart Navigation
+
+                </h3>
+
+                <p>
+
+                    Discover routes using interactive maps.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-wallet"></i>
+
+                <h3>
+
+                    Budget Planner
+
+                </h3>
+
+                <p>
+
+                    Track expenses and travel smarter.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-file-pdf"></i>
+
+                <h3>
+
+                    PDF Itinerary
+
+                </h3>
+
+                <p>
+
+                    Export your travel plans instantly.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-heart"></i>
+
+                <h3>
+
+                    Personalized Trips
+
+                </h3>
+
+                <p>
+
+                    AI recommends destinations based on your interests.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Popular Destinations -->
+    <!-- ========================= -->
+
+    <section
+        id="destinations"
+        class="destinations">
+
+        <h2>
+
+            Popular Destinations
+
+        </h2>
+
+        <div class="destination-grid">
+
+            <div class="destination-card">
+
+                <img src="images/goa.jpeg">
+
+                <h3>Goa</h3>
+
+            </div>
+
+            <div class="destination-card">
+
+                <img src="images/manali.jpeg">
+
+                <h3>Manali</h3>
+
+            </div>
+
+            <div class="destination-card">
+
+                <img src="images/kerala.jpeg">
+
+                <h3>Kerala</h3>
+
+            </div>
+
+            <div class="destination-card">
+
+                <img src="images/jaipur.jpeg">
+
+                <h3>Jaipur</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- How It Works -->
+    <!-- ========================= -->
+
+    <section class="steps">
+
+        <h2>
+
+            How VoyageAI Works
+
+        </h2>
+
+        <div class="step-container">
+
+            <div class="step">
+
+                <span>1</span>
+
+                <h3>
+
+                    Search
+
+                </h3>
+
+                <p>
+
+                    Search your destination.
+
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <span>2</span>
+
+                <h3>
+
+                    Create Trip
+
+                </h3>
+
+                <p>
+
+                    Enter travel details.
+
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <span>3</span>
+
+                <h3>
+
+                    AI Planning
+
+                </h3>
+
+                <p>
+
+                    AI generates your itinerary.
+
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <span>4</span>
+
+                <h3>
+
+                    Enjoy Journey
+
+                </h3>
+
+                <p>
+
+                    Travel smarter with VoyageAI.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Statistics -->
+    <!-- ========================= -->
+
+    <section class="stats">
+
+        <div>
+
+            <h2 class="counter" data-target="1000">
+
+                0
+
+            </h2>
+
+            <p>
+
+                Happy Travelers
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <h2 class="counter" data-target="250">
+
+                0
+
+            </h2>
+
+            <p>
+
+                Destinations
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <h2 class="counter" data-target="5000">
+
+                0
+
+            </h2>
+
+            <p>
+
+                Trips Planned
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Testimonials -->
+    <!-- ========================= -->
+
+    <section class="testimonials">
+
+        <h2>
+
+            What Users Say
+
+        </h2>
+
+        <div class="testimonial-container">
+
+            <div class="testimonial">
+
+                ⭐⭐⭐⭐⭐
+
+                <p>
+
+                    VoyageAI made planning my trip incredibly easy.
+
+                </p>
+
+                <h4>
+
+                    Rahul
+
+                </h4>
+
+            </div>
+
+            <div class="testimonial">
+
+                ⭐⭐⭐⭐⭐
+
+                <p>
+
+                    AI recommendations were surprisingly accurate.
+
+                </p>
+
+                <h4>
+
+                    Sneha
+
+                </h4>
+
+            </div>
+
+            <div class="testimonial">
+
+                ⭐⭐⭐⭐⭐
+
+                <p>
+
+                    Budget tracking saved me a lot of money.
+
+                </p>
+
+                <h4>
+
+                    Arjun
+
+                </h4>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- About -->
+    <!-- ========================= -->
+
+    <section
+        id="about"
+        class="about">
+
+        <h2>
+
+            About VoyageAI
+
+        </h2>
+
+        <p>
+
+            VoyageAI is an AI-powered Smart Travel Planner that helps users
+            discover destinations, generate personalized itineraries,
+            manage budgets, track expenses,
+            receive weather updates,
+            and enjoy seamless travel planning from one platform.
+
+        </p>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Footer -->
+    <!-- ========================= -->
+
+    <footer>
+
+        <h2>
+
+            VoyageAI
+
+        </h2>
+
+        <p>
+
+            Smart Travel Planner using Artificial Intelligence
+
+        </p>
+
+        <div>
+
+            <a href="#">Home</a>
+
+            <a href="#">Features</a>
+
+            <a href="#">About</a>
+
+            <a href="#">Contact</a>
+
+        </div>
+
+        <p>
+
+            © 2026 VoyageAI. All Rights Reserved.
+
+        </p>
+
+    </footer>
+
+    <!-- JS -->
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
