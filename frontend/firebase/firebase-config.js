@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/fireba
 import { getAuth, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB0eX3ixw-hLoa7YpmoKXGy7__xK0R2OTY",
+    apiKey: "NEW_API",
     authDomain: "voyageai-94a59.firebaseapp.com",
     projectId: "voyageai-94a59",
     storageBucket: "voyageai-94a59.firebasestorage.app",
