@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../css/login.css">
 </head>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <body>
 
     <div class="cont">
@@ -20,32 +22,88 @@
         <div class="forms">
 
             <!-- Register Form -->
-            <form action="#" class="register">
+            <form id="registerForm" class="register">
 
                 <h1>Create Account</h1>
 
-                <input type="text" placeholder="Full Name" required>
+                <input
+                    type="text"
+                    id="registerName"
+                    placeholder="Full Name"
+                    required>
 
-                <input type="email" placeholder="Email Address" required>
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Email Address"
+                    required>
 
-                <input type="password" placeholder="Password" required>
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Password"
+                    required>
 
-                <input type="password" placeholder="Confirm Password" required>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm Password"
+                    required>
 
-                <input type="submit" value="Create Account" id="registerBtn">
+                <input
+                    type="submit"
+                    value="Create Account"
+                    id="registerBtn">
 
             </form>
 
             <!-- Login Form -->
-            <form action="#" class="login">
+            <form id="loginForm" class="login">
 
                 <h1>Welcome Back</h1>
 
-                <input type="email" placeholder="Email Address" required>
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Email Address"
+                    required>
 
-                <input type="password" placeholder="Password" required>
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Password"
+                    required>
 
-                <input type="submit" value="Login" id="loginBtn">
+                <input
+                    type="submit"
+                    value="Login"
+                    id="loginBtn">
+
+                <!-- Google Login -->
+                <div class="google-login">
+
+                    <button
+                        type="button"
+                        id="googleLoginBtn">
+
+                        <img
+                            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                            width="20"
+                            alt="Google">
+
+                        Continue with Google
+
+                    </button>
+
+                </div>
+
+                <div class="forgot-password">
+
+                    <a href="#" id="forgotPassword">
+                        Forgot Password?
+                    </a>
+
+                </div>
 
             </form>
 
@@ -86,8 +144,8 @@
 
     </div>
 
-    <!-- External JavaScript -->
-    <script src="../js/auth.js"></script>
+    <!-- Firebase Authentication -->
+    <script type="module" src="../js/auth.js"></script>
 
 </body>
 

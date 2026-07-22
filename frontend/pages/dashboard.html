@@ -2,21 +2,28 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Dashboard | VoyageAI</title>
 
     <!-- Google Font -->
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome -->
+
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <link rel="stylesheet"
+        href="../css/dashboard.css">
 
 </head>
 
@@ -37,27 +44,33 @@
         <ul class="nav-links">
 
             <li class="active">
+
                 <a href="#">
+
                     Dashboard
+
                 </a>
+
             </li>
 
             <li>
+
                 <a href="my-trips.html">
+
                     My Trips
+
                 </a>
+
             </li>
 
             <li>
+
                 <a href="create-trip.html">
-                    Plan Trip
-                </a>
-            </li>
 
-            <li>
-                <a href="profile.html">
-                    Profile
+                    Plan Trip
+
                 </a>
+
             </li>
 
         </ul>
@@ -65,32 +78,39 @@
         <div class="nav-right">
 
             <button class="nav-btn">
+
                 <i class="fa-solid fa-bell"></i>
+
             </button>
 
             <button class="nav-btn">
+
                 <i class="fa-solid fa-moon"></i>
+
             </button>
 
-            <div class="profile">
 
-                <img src="../images/profile.jpg" alt="Profile">
+<a href="profile.html" class="profile">
 
-                <div>
+    <img
+        id="profileImage"
+        src="../screenshots/user.png"
+        alt="Profile">
 
-                    <h4>Manoj</h4>
+    <div>
 
-                    <small>Traveler</small>
+        <h4 id="userName">
+            Loading...
+        </h4>
 
-                </div>
+    </div>
 
-            </div>
+</a>
 
         </div>
 
     </nav>
-
-    <!-- ===================== HERO ===================== -->
+        <!-- ===================== HERO ===================== -->
 
     <section class="hero">
 
@@ -102,9 +122,9 @@
 
             </span>
 
-            <h1>
+            <h1 id="welcomeMessage">
 
-                Good Morning, Manoj 👋
+                Good Morning 👋
 
             </h1>
 
@@ -132,69 +152,99 @@
 
         <form class="planner-form">
 
-<div class="input-box">
-    <label>Destination</label>
-    <input type="text" placeholder="Where do you want to go?">
-</div>
+            <div class="input-box">
 
-<div class="input-box">
-    <label>Start Date</label>
-    <input type="date">
-</div>
+                <label>Destination</label>
 
-<div class="input-box">
-    <label>End Date</label>
-    <input type="date">
-</div>
+                <input
+                    type="text"
+                    placeholder="Where do you want to go?">
 
-<div class="input-box">
-    <label>Budget</label>
-    <input type="number" placeholder="₹20,000">
-</div>
+            </div>
 
-<div class="input-box">
-    <label>Travelers</label>
-    <input type="number" placeholder="2">
-</div>
+            <div class="input-box">
 
-<div class="input-box">
-    <label>Travel Interest</label>
+                <label>Start Date</label>
 
-    <select id="interest">
+                <input type="date">
 
-        <option>🏕 Adventure</option>
-        <option>❤️ Romantic</option>
-        <option>💎 Luxury</option>
-        <option>🏛 Culture</option>
-        <option>🌿 Nature</option>
+            </div>
 
-    </select>
+            <div class="input-box">
 
-</div>
+                <label>End Date</label>
 
-<div class="input-box trip-type-box">
+                <input type="date">
 
-    <label>Trip Type</label>
+            </div>
 
-    <select id="tripType">
+            <div class="input-box">
 
-        <option>🧍 Solo</option>
-        <option>❤️ Couple</option>
-        <option>👨‍👩‍👧‍👦 Family</option>
-        <option>👫 Friends</option>
-        <option>💼 Business</option>
+                <label>Budget</label>
 
-    </select>
+                <input
+                    type="number"
+                    placeholder="₹20,000">
 
-</div>
+            </div>
 
-<button class="generate-btn">
+            <div class="input-box">
 
-    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <label>Travelers</label>
 
-    Generate AI Trip
+                <input
+                    type="number"
+                    placeholder="2">
 
-</button>
+            </div>
+
+            <div class="input-box">
+
+                <label>Travel Interest</label>
+
+                <select id="interest">
+
+                    <option>🏕 Adventure</option>
+
+                    <option>❤️ Romantic</option>
+
+                    <option>💎 Luxury</option>
+
+                    <option>🏛 Culture</option>
+
+                    <option>🌿 Nature</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-box trip-type-box">
+
+                <label>Trip Type</label>
+
+                <select id="tripType">
+
+                    <option>🧍 Solo</option>
+
+                    <option>❤️ Couple</option>
+
+                    <option>👨‍👩‍👧‍👦 Family</option>
+
+                    <option>👫 Friends</option>
+
+                    <option>💼 Business</option>
+
+                </select>
+
+            </div>
+
+            <button class="generate-btn">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Generate AI Trip
+
+            </button>
 
         </form>
 
@@ -245,8 +295,7 @@
         </div>
 
     </section>
-
-    <!-- ===================== CONTENT ===================== -->
+        <!-- ===================== CONTENT ===================== -->
 
     <section class="dashboard-grid">
 
@@ -276,7 +325,11 @@
 
                 </div>
 
-                <button>View</button>
+                <button>
+
+                    View
+
+                </button>
 
             </div>
 
@@ -290,7 +343,11 @@
 
                 </div>
 
-                <button>View</button>
+                <button>
+
+                    View
+
+                </button>
 
             </div>
 
@@ -304,7 +361,11 @@
 
                 </div>
 
-                <button>View</button>
+                <button>
+
+                    View
+
+                </button>
 
             </div>
 
@@ -314,15 +375,31 @@
 
         <div class="weather card">
 
-            <h2>Today's Weather</h2>
+            <h2>
+
+                Today's Weather
+
+            </h2>
 
             <i class="fa-solid fa-cloud-sun"></i>
 
-            <h1>28°</h1>
+            <h1>
 
-            <p>Hyderabad</p>
+                28°
 
-            <span>Sunny</span>
+            </h1>
+
+            <p>
+
+                Hyderabad
+
+            </p>
+
+            <span>
+
+                Sunny
+
+            </span>
 
         </div>
 
@@ -360,7 +437,9 @@
 
     </footer>
 
-    <script src="../js/dashboard.js"></script>
+    <!-- Dashboard JS -->
+
+    <script type="module" src="../js/dashboard.js"></script>
 
 </body>
 

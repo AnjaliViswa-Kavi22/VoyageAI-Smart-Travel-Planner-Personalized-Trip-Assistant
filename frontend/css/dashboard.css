@@ -1197,3 +1197,28 @@ button{
     margin-top:10px;
 
 }
+.profile{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.profile img{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.profile h4{
+    color:#fff;
+    font-size:15px;
+    font-weight:600;
+    margin:0;
+}
+
+.profile:hover{
+    opacity:0.85;
+}

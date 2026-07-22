@@ -1,10 +1,47 @@
 /*==========================================
+        FIREBASE IMPORTS
+==========================================*/
+
+import { auth } from "../firebase/firebase-config.js";
+
+import {
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+
+
+/*==========================================
+        CURRENT USER
+==========================================*/
+
+let currentUser = null;
+
+
+/*==========================================
         VOYAGEAI DASHBOARD
 ==========================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    welcomeGreeting();
+    // Check Login Status
+
+    onAuthStateChanged(auth, (user) => {
+
+        if (!user) {
+
+            window.location.href = "login.html";
+
+            return;
+
+        }
+
+        currentUser = user;
+
+        loadUserInfo(user);
+
+        welcomeGreeting();
+
+    });
 
     animateStats();
 
@@ -18,7 +55,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
     weatherAnimation();
 
+    logoutButton();
+
 });
+
+
+/*==========================================
+        LOAD USER
+==========================================*/
+
+/*==========================================
+        LOAD USER
+==========================================*/
+
+function loadUserInfo(user) {
+
+    const userName = document.getElementById("userName");
+
+    const userRole = document.getElementById("userRole");
+
+    const profileImage = document.getElementById("profileImage");
+
+    if (!userName || !user) return;
+
+    let name = "Traveler";
+
+    if (user.displayName && user.displayName.trim() !== "") {
+
+        name = user.displayName;
+
+    }
+
+    else if (user.email) {
+
+        name = user.email.split("@")[0];
+
+    }
+
+    userName.textContent = name;
+
+    if (userRole) {
+
+        userRole.textContent = "Traveler";
+
+    }
+
+    if (profileImage && user.photoURL) {
+
+        profileImage.src = user.photoURL;
+
+    }
+
+}
 
 
 /*==========================================
@@ -27,7 +115,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function welcomeGreeting() {
 
-    const heading = document.querySelector(".hero h1");
+    const heading =
+        document.getElementById("welcomeMessage");
+
+    if (!heading) return;
 
     const hour = new Date().getHours();
 
@@ -45,207 +136,53 @@ function welcomeGreeting() {
 
     }
 
-    heading.innerHTML = `${greeting}, Manoj 👋`;
+    const name =
+        currentUser?.displayName ||
+        currentUser?.email.split("@")[0] ||
+        "Traveler";
+
+    heading.innerHTML =
+        `${greeting}, ${name} 👋`;
 
 }
 
 
 /*==========================================
-        ANIMATED STATS
+        LOGOUT
 ==========================================*/
 
-function animateStats() {
+function logoutButton() {
 
-    const stats = document.querySelectorAll(".stat-card h2");
+    const button =
+        document.getElementById("logoutBtn");
 
-    stats.forEach((stat) => {
+    if (!button) return;
 
-        const text = stat.innerText;
+    button.addEventListener("click", async () => {
 
-        const number = parseInt(text.replace(/\D/g, ""));
+        const confirmLogout =
+            confirm("Do you want to logout?");
 
-        if (isNaN(number)) return;
+        if (!confirmLogout) return;
 
-        let count = 0;
+        try {
 
-        const speed = Math.ceil(number / 50);
+            await signOut(auth);
 
-        const timer = setInterval(() => {
-
-            count += speed;
-
-            if (count >= number) {
-
-                count = number;
-
-                clearInterval(timer);
-
-            }
-
-            if (text.includes("₹")) {
-
-                stat.innerText = `₹${count}K`;
-
-            }
-
-            else {
-
-                stat.innerText = count.toString().padStart(2, "0");
-
-            }
-
-        }, 25);
-
-    });
-
-}
-
-
-/*==========================================
-        NAVBAR SHADOW
-==========================================*/
-
-function navbarShadow() {
-
-    window.addEventListener("scroll", () => {
-
-        const navbar = document.querySelector(".navbar");
-
-        if (window.scrollY > 20) {
-
-            navbar.style.boxShadow =
-                "0 10px 30px rgba(0,0,0,.35)";
+            window.location.href =
+                "login.html";
 
         }
 
-        else {
+        catch (error) {
 
-            navbar.style.boxShadow = "none";
+            alert(error.message);
 
         }
 
     });
 
 }
-
-
-/*==========================================
-        AI PLANNER FORM
-==========================================*/
-
-function plannerForm() {
-
-    const form = document.querySelector(".planner-form");
-
-    form.addEventListener("submit", function (e) {
-
-        e.preventDefault();
-
-        const destination =
-            form.querySelector('input[type="text"]').value;
-
-        const start =
-            form.querySelectorAll('input[type="date"]')[0].value;
-
-        const end =
-            form.querySelectorAll('input[type="date"]')[1].value;
-
-        const budget =
-            form.querySelector('input[type="number"]').value;
-
-        if (
-            destination === "" ||
-            start === "" ||
-            end === "" ||
-            budget === ""
-        ) {
-
-            alert("Please fill all required fields.");
-
-            return;
-
-        }
-
-        const button = document.querySelector(".generate-btn");
-
-        button.innerHTML =
-            '<i class="fa-solid fa-spinner fa-spin"></i> Generating...';
-
-        button.disabled = true;
-
-        setTimeout(() => {
-
-            alert("AI Trip Generation will be connected to Flask Backend.");
-
-            button.innerHTML =
-                '<i class="fa-solid fa-wand-magic-sparkles"></i> Generate AI Trip';
-
-            button.disabled = false;
-
-        }, 2000);
-
-    });
-
-}
-
-
-/*==========================================
-        NOTIFICATION
-==========================================*/
-
-function notificationButton() {
-
-    const bell = document.querySelectorAll(".nav-btn")[0];
-
-    bell.addEventListener("click", () => {
-
-        alert("No new notifications.");
-
-    });
-
-}
-
-
-/*==========================================
-        PROFILE
-==========================================*/
-
-function profileButton() {
-
-    const profile = document.querySelector(".profile");
-
-    profile.addEventListener("click", () => {
-
-        window.location.href = "profile.html";
-
-    });
-
-}
-
-
-/*==========================================
-        WEATHER ICON
-==========================================*/
-
-function weatherAnimation() {
-
-    const icon = document.querySelector(".weather i");
-
-    setInterval(() => {
-
-        icon.style.transform = "scale(1.15)";
-
-        setTimeout(() => {
-
-            icon.style.transform = "scale(1)";
-
-        }, 500);
-
-    }, 3000);
-
-}
-
-
 /*==========================================
         RECENT TRIPS BUTTONS
 ==========================================*/

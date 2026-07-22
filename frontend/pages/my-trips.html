@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Trips | VoyageAI</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/my-trips.css">
+
+</head>
+
+<body>
+
+<!-- ===========================
+        NAVBAR
+=========================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-earth-asia"></i>
+
+        <span>VoyageAI</span>
+
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="dashboard.html">Dashboard</a></li>
+
+        <li><a href="create-trip.html">Create Trip</a></li>
+
+        <li class="active"><a href="#">My Trips</a></li>
+
+        <li><a href="profile.html">Profile</a></li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ===========================
+        HEADER
+=========================== -->
+
+<section class="page-header">
+
+    <h1>My Trips</h1>
+
+    <p>
+        View, search and manage all your saved travel plans.
+    </p>
+
+</section>
+
+
+<!-- ===========================
+        SEARCH BAR
+=========================== -->
+
+<section class="search-section">
+
+    <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+        type="text"
+        id="searchTrip"
+        placeholder="Search destination...">
+
+    </div>
+
+</section>
+
+
+<!-- ===========================
+        FILTERS
+=========================== -->
+
+<section class="filters">
+
+    <select id="filterType">
+
+        <option value="">Trip Type</option>
+
+        <option>Solo</option>
+
+        <option>Couple</option>
+
+        <option>Friends</option>
+
+        <option>Family</option>
+
+        <option>Business</option>
+
+    </select>
+
+    <select id="filterInterest">
+
+        <option value="">Travel Interest</option>
+
+        <option>Adventure</option>
+
+        <option>Luxury</option>
+
+        <option>Nature</option>
+
+        <option>Culture</option>
+
+        <option>Romantic</option>
+
+    </select>
+
+</section>
+
+
+<!-- ===========================
+        MY TRIPS GRID
+=========================== -->
+
+<section class="trips-grid">
+
+    <!-- CARD 1 -->
+
+    <div class="trip-card">
+
+        <img src="../images/bali.jpg" alt="">
+
+        <div class="trip-content">
+
+            <h2>Bali Adventure</h2>
+
+            <p>
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                10 Jul - 15 Jul
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-users"></i>
+
+                Couple
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-wallet"></i>
+
+                ₹55,000
+
+            </p>
+
+            <div class="trip-buttons">
+
+                <button class="view-btn">
+
+                    View
+
+                </button>
+
+                <button class="delete-btn">
+
+                    Delete
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CARD 2 -->
+
+    <div class="trip-card">
+
+        <img src="../images/japan.jpg" alt="">
+
+        <div class="trip-content">
+
+            <h2>Japan Luxury</h2>
+
+            <p>
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                05 Aug - 12 Aug
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-users"></i>
+
+                Friends
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-wallet"></i>
+
+                ₹1,20,000
+
+            </p>
+
+            <div class="trip-buttons">
+
+                <button class="view-btn">
+
+                    View
+
+                </button>
+
+                <button class="delete-btn">
+
+                    Delete
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CARD 3 -->
+
+    <div class="trip-card">
+
+        <img src="../images/switzerland.jpg" alt="">
+
+        <div class="trip-content">
+
+            <h2>Switzerland Nature</h2>
+
+            <p>
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                20 Sep - 28 Sep
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-users"></i>
+
+                Family
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-wallet"></i>
+
+                ₹2,10,000
+
+            </p>
+
+            <div class="trip-buttons">
+
+                <button class="view-btn">
+
+                    View
+
+                </button>
+
+                <button class="delete-btn">
+
+                    Delete
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===========================
+        EMPTY STATE
+=========================== -->
+
+<section class="empty-state">
+
+    <i class="fa-solid fa-plane-circle-xmark"></i>
+
+    <h2>No Trips Found</h2>
+
+    <p>
+
+        Your saved trips will appear here.
+
+    </p>
+
+</section>
+
+
+<!-- ===========================
+        FOOTER
+=========================== -->
+
+<footer>
+
+    © 2026 VoyageAI • Smart AI Travel Planner
+
+</footer>
+
+
+<script src="../js/my-trips.js"></script>
+
+</body>
+</html>

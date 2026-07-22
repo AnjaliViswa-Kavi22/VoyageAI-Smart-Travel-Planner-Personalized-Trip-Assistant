@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | VoyageAI</title>
+
+    <!-- Google Font -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+        href="../css/profile.css">
+
+</head>
+
+<body>
+
+    <!-- ===========================
+            NAVBAR
+    ============================ -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-earth-asia"></i>
+
+            <span>VoyageAI</span>
+
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+
+                <a href="dashboard.html">
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="create-trip.html">
+
+                    Create Trip
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="my-trips.html">
+
+                    My Trips
+
+                </a>
+
+            </li>
+
+            <li class="active">
+
+                <a href="#">
+
+                    Profile
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- ===========================
+            PROFILE SECTION
+    ============================ -->
+
+    <section class="profile-section">
+
+        <div class="profile-card">
+
+            <!-- LEFT -->
+
+            <div class="profile-left">
+
+                <img
+                    src="../images/profile.jpg"
+                    id="profileImage"
+                    alt="Profile">
+
+                <button class="change-photo">
+
+                    <i class="fa-solid fa-camera"></i>
+
+                    Change Photo
+
+                </button>
+
+            </div>
+
+
+
+            <!-- RIGHT -->
+
+            <div class="profile-right">
+
+                <h1 id="userName">
+
+                    Loading...
+
+                </h1>
+
+                <p class="role">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Premium Traveler
+
+                </p>
+
+                <div class="profile-info">
+
+                    <!-- EMAIL -->
+
+                    <div class="info-box">
+
+                        <label>
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            Email
+
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            readonly>
+
+                    </div>
+
+                    <!-- PHONE -->
+
+                    <div class="info-box">
+
+                        <label>
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            Phone
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="phone"
+                            placeholder="+91 XXXXXXXXXX">
+
+                    </div>
+
+                    <!-- LOCATION -->
+
+                    <div class="info-box">
+
+                        <label>
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            Location
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="location"
+                            placeholder="Your Location">
+
+                    </div>
+
+                    <!-- JOINED -->
+
+                    <div class="info-box">
+
+                        <label>
+
+                            <i class="fa-solid fa-calendar-days"></i>
+
+                            Joined
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="joinedDate"
+                            readonly>
+
+                    </div>
+
+                    <!-- LAST LOGIN -->
+
+                    <div class="info-box">
+
+                        <label>
+
+                            <i class="fa-solid fa-clock"></i>
+
+                            Last Login
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="lastLogin"
+                            readonly>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- ===========================
+            STATS
+    ============================ -->
+
+    <section class="stats-section">
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-plane"></i>
+
+            <h2>18</h2>
+
+            <p>Total Trips</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-heart"></i>
+
+            <h2>12</h2>
+
+            <p>Saved Trips</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-globe"></i>
+
+            <h2>7</h2>
+
+            <p>Countries Visited</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-star"></i>
+
+            <h2>Bali</h2>
+
+            <p>Favorite Destination</p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===========================
+            ACCOUNT SETTINGS
+    ============================ -->
+
+    <section class="settings-card">
+
+        <h2>
+
+            <i class="fa-solid fa-gear"></i>
+
+            Account Settings
+
+        </h2>
+
+        <div class="settings-grid">
+
+            <div class="setting-item">
+
+                <span>
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    Email Notifications
+
+                </span>
+
+                <label class="switch">
+
+                    <input type="checkbox" checked>
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+            <div class="setting-item">
+
+                <span>
+
+                    <i class="fa-solid fa-moon"></i>
+
+                    Dark Mode
+
+                </span>
+
+                <label class="switch">
+
+                    <input type="checkbox">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+            <div class="setting-item">
+
+                <span>
+
+                    <i class="fa-solid fa-location-crosshairs"></i>
+
+                    Location Access
+
+                </span>
+
+                <label class="switch">
+
+                    <input type="checkbox" checked>
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+            <div class="setting-item">
+
+                <span>
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    Two-Factor Authentication
+
+                </span>
+
+                <label class="switch">
+
+                    <input type="checkbox">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===========================
+            ACTION BUTTONS
+    ============================ -->
+
+    <section class="action-buttons">
+
+        <button
+            id="editBtn"
+            class="edit-btn">
+
+            <i class="fa-solid fa-pen"></i>
+
+            Edit Profile
+
+        </button>
+
+        <button
+            id="saveBtn"
+            class="save-btn">
+
+            <i class="fa-solid fa-floppy-disk"></i>
+
+            Save Changes
+
+        </button>
+
+        <button
+            id="logoutBtn"
+            class="logout-btn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </section>
+
+
+
+    <!-- ===========================
+            FOOTER
+    ============================ -->
+
+    <footer>
+
+        <p>
+
+            © 2026 VoyageAI | Smart Travel Planner
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- JavaScript -->
+
+    <script type="module" src="../js/profile.js"></script>
+
+</body>
+
+</html>
